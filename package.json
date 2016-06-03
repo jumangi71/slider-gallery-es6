@@ -7,10 +7,6 @@
     "node": "~0.12.10",
     "npm": "~2.14.9"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.rambler.ru:ino/ino-site.git"
-  },
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server --progress --port 3001",
     "build": "rm -rf public/assets/* && NODE_ENV=production webpack -p --colors",
@@ -49,6 +45,7 @@
     "webpack-dev-server": "1.12.0"
   },
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "custom-event-polyfill": "0.2.2"
   }
 }

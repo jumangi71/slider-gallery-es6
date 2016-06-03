@@ -1,0 +1,312 @@
+.slider-main_page
+  .slider-item
+    height 180px
+
+    @media (max-width $screen-sm)
+      height 160px
+
+
+
+.slider
+  &-container
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+  &-wrapper
+    height: 100%;
+    white-space: nowrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 500ms ease;
+
+  &-item
+    white-space: normal;
+    display inline-block
+    height 100%
+    width 280px
+    overflow hidden
+    margin-right: 10px;
+    vertical-align: top;
+    position relative
+
+    .article-container
+      box-shadow none
+      padding 0
+
+  &-navigator
+    position relative
+
+    &-wrapper
+      transition: transform 500ms ease;
+
+    &-dot
+      position relative
+
+  &-anim
+    .slider-item
+      transition: opacity 0.8s;
+
+  &-stop
+    .slider-wrapper
+      transition none
+
+
+
+  &-nav
+    &-inactive
+      display none
+      color: #ccc;
+      cursor: default;
+
+    &-left
+    &-right
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      width: 40px;
+      height: 60px;
+      background: $color-bg;
+      box-shadow: 0 0 3px 0 rgba(0,0,0,0.50);
+      border 0
+      outline none
+      z-index 2
+      font-size 24px
+      text-align center
+      line-height: 63px;
+
+      &:hover
+        color $color-primary
+
+    &-left
+      left: 0;
+    &-right
+      right: 0;
+
+    @media (max-width $screen-sm)
+      &-left
+      &-right
+        display none
+
+  &-title
+    margin: 11px 0 0 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: 1.71px;
+    line-height: 16px;
+    text-transform uppercase
+    text-decoration none
+    float left
+    max-width 80px
+
+    a&
+      color inherit
+      &:hover
+        color $color-primary
+
+    @media (max-width $screen-sm)
+      width: 100%;
+      max-width none
+      margin: 2px 0 13px 10px;
+
+  &-articles
+    position: relative;
+    overflow: hidden;
+    margin-left: 8%;
+    height: 100%;
+
+    @media (max-width $screen-sm)
+      width: 100%;
+      margin-left: 0;
+
+  &-main
+    float left
+    width 100%
+    background-color #fff
+    overflow hidden
+    margin-bottom 20px
+    position relative
+    box-shadow: $shadow
+
+    &-container
+      padding 10px
+      height: 100%;
+      overflow hidden
+
+    //.article-second_part
+    //  height: 80%;
+
+
+    @media (max-width $screen-sm)
+      margin: 0 -10px 10px -10px;
+      float: none;
+      width: auto;
+      box-shadow: none;
+
+  &-hover
+    background-color #fff
+    overflow hidden
+    margin-bottom 20px
+    height 360px
+    position relative
+    box-shadow: $shadow
+
+    &-container
+      height: 100%;
+      overflow hidden
+
+    .slider-wrapper
+      position relative
+
+    .slider-title
+      opacity: 0.9;
+      color: $color-gray;
+      margin: 21px 0 0 14px;
+      position absolute
+      left 0
+      top 0
+      z-index 3
+
+    .slider-navigator
+      position: absolute;
+      bottom: 0;
+      z-index: 5;
+      left: 50%;
+
+      @media (min-width $screen-xs)
+        margin-left: 0
+        left: 0
+      @media (min-width $screen-sm)
+        margin-left: 0
+        left: 0
+        width 100%
+      @media (min-width $screen-md)
+        margin-left: 0
+        left: 0
+        width 100%
+      @media (min-width $screen-lg)
+        left: 50%;
+        width auto
+        margin-left: -40%;
+
+      &-dot
+        height 80px
+        max-width 250px
+        width 25%
+        padding 10px
+        overflow: hidden;
+        color: #fff;
+        position: relative;
+        float left
+        z-index: 1;
+
+        @media (min-width $screen-lg)
+          min-width 250px
+
+        &:after
+          content ''
+          position absolute
+          left 0
+          right -1px
+          top 0
+          bottom: 0
+          background-color: rgba(0,0,0,.7);
+          opacity 0.8
+          z-index -1
+
+        &.slider-select
+        &:hover
+          color: #000;
+          &:after
+            opacity 0.9
+
+        &:hover
+          &:after
+            background-color $color-primary
+
+        &.slider-select
+          &:after
+            background: #FFFFFF;
+
+        .row
+          height: 100%;
+
+        &-pic
+          height 100%
+          background-position: center center;
+          background-repeat: no-repeat;
+          width: 30%;
+          margin-right: 4%;
+          float: left;
+
+        &-title
+          font-size: 14px;
+          line-height: 16px;
+          font-weight 600
+          text-decoration none
+          //@media (max-width $screen-lg)
+          //  font-size 12px
+          width: 66%;
+          float: left;
+
+          @media (max-width $screen-md)
+            width auto
+
+
+    .slider-item
+      position absolute
+      left 0
+      top 0
+      width 100%
+
+    .slider-articles
+      position: relative;
+      overflow: hidden;
+      margin-left: 0
+      height: 100%;
+
+  &-descriptions
+    margin-top 5px
+    background #F9FAFA
+    padding 26px 7.28%
+
+    &-wrapper
+      position relative
+
+    &-author
+      font-size: 12px;
+      color: #7A7A7A;
+      letter-spacing: 1px;
+      float left
+
+    &-item
+      position relative
+      display none
+
+      &.active
+        display block
+
+      p
+        font-family $font-family-sans !important
+        font-size 20px
+        line-height 26px
+        margin-top 9px
+
+        @media (max-width $screen-sm)
+          font-size 14px
+          line-height 18px
+
+    @media (max-width $screen-sm)
+      padding 26px 10px
+
+    .slider-counter-block
+      text-transform uppercase
+      font-size: 12px;
+      color: #000000;
+      letter-spacing: 1.71px;
+      line-height: 12px;
+      font-weight 600
+      margin-bottom 10px
+
