@@ -1,0 +1,10 @@
+!.keep
+*.DS_Store
+/public/assets
+/tmp/*
+
+.idea/
+node_modules/
+
+npm-debug.log
+public/*.html
