@@ -13,24 +13,34 @@ module.exports = {
 
   entry: {
     app: _path + '/app/assets/js/app.js',
-    //vendors: dependencies
+    vendors: dependencies
   },
 
   output: {
-    path: _path,
+    path: path.join(_path, 'public', 'assets'),
     filename: '[chunkhash].[name].js',
     chunkFilename: '[chunkhash].[id].js',
-    publicPath: './'
+    publicPath: '/assets/'
+  },
+
+  debug: true,
+  devtool: 'eval',
+
+  devServer: {
+    contentBase: './public',
+    info: true,
+    hot: false,
+    inline: true
   },
 
   resolve: {
     extensions: ['', '.js'],
     modulesDirectories: ['node_modules'],
     alias: {
-      _app: path.join(_path, 'app', 'assets', 'javascripts'),
-      _stylesheets: path.join(_path, 'app', 'assets', 'stylesheets'),
+      _app: path.join(_path, 'app', 'assets', 'js'),
+      _stylesheets: path.join(_path, 'app', 'assets', 'style'),
       _templates: path.join(_path, 'app', 'assets', 'templates'),
-      _images: path.join(_path, 'app', 'assets', 'images')
+      _images: path.join(_path, 'app', 'assets', 'img')
       // _icons: path.join(_path, 'app', 'assets', 'icons', 'fontcustom')
     }
   },
@@ -42,7 +52,7 @@ module.exports = {
       { test: /\.(ttf|eot|otf|woff|woff2)$/i, loaders: ['file-loader'] },
       { test: /\.styl$/i, loader: TextPlugin.extract('style-loader', 'css-loader?minimize!postcss-loader!stylus-loader') },
       { test: /\.css$/, loader: TextPlugin.extract('style-loader', 'css-loader') },
-      //{ test: /\.(png|ico|jpg|jpeg|gif|svg)$/i, loaders: ['file?context=' + rootAssetPath + '&name=[path][hash].[name].[ext]'] }
+      { test: /\.(png|ico|jpg|jpeg|gif|svg)$/i, loaders: ['file?context=' + rootAssetPath + '&name=[path][hash].[name].[ext]'] }
     ]
   },
 

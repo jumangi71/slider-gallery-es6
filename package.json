@@ -45,7 +45,6 @@
     "webpack-dev-server": "1.12.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.6",
     "custom-event-polyfill": "0.2.2"
   }
 }

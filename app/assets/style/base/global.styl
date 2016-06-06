@@ -1,0 +1,547 @@
+
+
+body
+  font-family $font-family-sans
+  font-size $font-size-base
+  font-weight normal
+  line-height $line-height-base
+  background-color $color-bg
+  color #000
+
+  &.collapsed
+    overflow hidden
+    //margin-right 15px
+    //
+    //.header-wrapper
+    //  right: 15px;
+
+  @media (max-width $screen-sm)
+    font-size 0.75 * $font-size-base
+    line-height 0.1 + $line-height-base
+
+*
+  box-sizing border-box
+
+
+a
+  color #0877FF
+
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6
+  font-family $headings-font-family
+  line-height $headings-line-height
+  font-weight $headings-font-weight
+  color $headings-color
+
+  small
+    color #7A7A7A
+    line-height 1
+    font-weight normal
+
+
+h1, .h1,
+h2, .h2,
+h3, .h3
+  margin-top $line-height-computed
+  margin-bottom ($line-height-computed / 2)
+  font-weight 600
+
+  small,
+  .small
+    font-size 60%
+
+h4, .h4,
+h5, .h5,
+h6, .h6
+  margin-top ($line-height-computed / 2)
+  margin-bottom ($line-height-computed / 2)
+
+  small,
+  .small
+    font-size 75%
+
+
+h1, .h1
+  font-size $font-size-h1
+
+  @media (max-width $screen-sm)
+    font-size ($font-size-h1 / 2)
+
+h2, .h2
+  font-size $font-size-h2
+
+  @media (max-width $screen-sm)
+    font-size ($font-size-h2 / 2)
+
+h3, .h3
+  font-size $font-size-h3
+
+  @media (max-width $screen-sm)
+    font-size ($font-size-h3 / 2)
+
+h4, .h4
+  font-size $font-size-h4
+
+h5, .h5
+  font-size $font-size-h5
+
+h6, .h6
+  font-size $font-size-h6
+
+
+
+.main-wrapper
+  padding-top 72px
+  padding-bottom 35px
+
+.main-container
+  height 100%
+  background: #FFFFFF;
+  box-shadow: 0px 10px 40px 0px rgba(0,0,0,0.10);
+
+  @media (max-width $screen-sm)
+    background-color transparent
+    box-shadow none
+
+
+.clearfix
+  clearfix()
+
+.center-block
+  center-block()
+
+.pull-right
+  float right !important
+
+.pull-left
+  float left !important
+
+.hide
+  display none !important
+
+.show
+  display block !important
+
+.invisible
+  visibility hidden
+
+.text-hide
+  hide-text()
+
+.hidden
+  display none !important
+
+.affix
+  position fixed
+
+
+.fs38
+  font-size 38px
+
+.fs48
+  font-size 48px
+
+
+
+
+.delimiter
+  &:after
+    content '.'
+    vertical-align top
+    margin -5px 5px 0
+    display inline-block
+    font-size 20px
+
+.breadcrumbs
+  margin-bottom 5px
+  font-size: 13px;
+  line-height: 13px;
+  letter-spacing: 0.92px;
+  color: #000;
+  position relative
+  z-index 2
+
+  &-next
+    opacity 1 !important
+    display none
+    font-weight bold
+    padding-right 15px
+
+  &-item
+    opacity: 0.5;
+    color: #000;
+    letter-spacing: 1px;
+    text-transform uppercase
+    text-decoration none
+
+    &:hover
+      color $color-primary !important
+      opacity 1
+
+  .delimiter
+    opacity 0.5
+
+
+
+blockquote
+  padding: 20px 36px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 4px solid #DFC991;
+
+  p:last-child,
+  .small,
+  footer,
+  small
+    display: block;
+    line-height: 1.42857143;
+    font-family $font-family-serif !important
+
+    &:before
+      content: '\2014 \00A0';
+
+  p
+  p:first-child
+    margin: 0 0 15px !important
+    font-family $font-family-sans !important
+
+
+  @media (max-width $screen-sm)
+    font-size 15px
+    line-height 21px
+    padding: 8px 15px;
+
+
+
+// Form
+
+::-webkit-input-placeholder
+::-moz-placeholder
+:-moz-placeholder
+:-ms-input-placeholder
+  color: #3E3E3E
+  opacity .3
+
+.form
+  &-horizontal
+    .form-group
+      position relative
+
+    .form-control
+      background: #FFFFFF;
+      border: 1px solid #BABABA;
+      border-radius: 3px 0 0 3px;
+      line-height: 40px;
+      height: 40px;
+      padding: 0 15px;
+      outline-color $color-primary
+      outline-width 2px
+
+    .input-group
+      width 100%
+
+
+.input-group
+  display table
+  position relative
+
+  .form-control
+  .form-group
+  &-btn
+    display table-cell
+    vertical-align top
+
+  .form-control
+  .form-group
+    border-right-color transparent
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+
+  &-btn
+    width: 1%;
+    .btn
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+
+
+
+.btn
+  border 1px solid transparent
+  padding: 13px 30px;
+  font-size 13px
+  line-height 1.1
+  font-weight 600
+  letter-spacing: 1px;
+  border-radius: 3px;
+  text-transform uppercase
+  display inline-block
+  text-decoration none
+  background: transparent;
+  height: 40px;
+  outline none
+
+  &-default
+    color $color-primary
+    border-color $color-primary
+    background-color #fff
+
+    &:hover
+    &.active
+      background-color $color-primary
+      color #fff
+
+  &-social
+    color #000
+    font-weight 300
+    padding: 13px 15px;
+
+    &:hover
+      background-color rgba($color-primary, .15)
+
+      //border-color $color-primary !important
+      //color $color-primary !important
+
+    [class*='icon_']
+      vertical-align: top;
+      padding-right 5px
+    &.btn-tw
+      border-color #80DCF6
+      color #10B9EC
+      &:hover
+        background-color rgba(#80DCF6, .15)
+    &.btn-fb
+      border-color #A1ABCB
+      color #425697
+      &:hover
+        background-color rgba(#A1ABCB, .15)
+    &.btn-gplus
+      border-color #F7A792
+      color #EF4E24
+      &:hover
+        background-color rgba(#F7A792, .15)
+.btn-group
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  & >.btn:first-child:not(:last-child)
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  & >.btn:not(:first-child):not(:last-child)
+    border-radius: 0;
+  & >.btn:last-child:not(:first-child)
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+  .btn
+    position: relative;
+    float: left;
+
+  .btn + .btn
+    margin-left: -1px;
+
+
+.dropdown
+  position relative
+
+  &-menu
+    display none
+    position: absolute;
+    left: -20px;
+    top: -16px;
+    z-index: 100;
+    float: left;
+    min-width: 280px;
+    line-height 36px
+    text-align: left;
+    list-style: none;
+    letter-spacing normal
+    background-color: #f6f6f6;
+    box-shadow: 0 10px 40px 0 rgba(0,0,0,0.3);
+    transition: all 250ms linear;
+    padding: 10px 20px;
+
+    //a
+    //  display block
+    //  color #3e3e3e
+    //  padding: 0 15px;
+    //
+    //  &:hover
+    //    background-color #f6f6f6;
+
+
+  &-toggled
+    .dropdown-menu
+      display block
+
+
+.label
+  padding 5px 9px
+  text-decoration none
+  text-transform uppercase
+  background transparent
+  border 1px solid transparent
+  border-radius 3px
+  color #3e3e3e
+
+  &-default
+    &.active
+    &:hover
+      background $color-primary
+      color #3e3e3e !important
+
+  &-inv
+    background $color-primary
+    color #3e3e3e
+
+    &:hover
+      opacity: 0.8;
+
+
+
+
+
+.tag
+  &-container
+    position relative
+    font-size: 12px;
+    font-weight 600
+    float: left;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    overflow: hidden;
+    margin-top: 10px;
+
+  &-item
+    color: #000000;
+    text-decoration none
+    text-transform lowercase
+    white-space: nowrap
+
+    &:hover
+      color $color-primary !important
+
+
+// tables
+
+table
+  background-color transparent
+
+th
+  text-align left
+
+.table
+  width 100%
+  max-width 100%
+  margin-bottom 15px
+
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot
+    > tr
+      > th,
+      > td
+        padding 8px
+        line-height 1.75
+        vertical-align top
+        border-bottom 1px solid $color-primary
+
+  // Bottom align for column headings
+  > thead > tr > th
+    vertical-align bottom
+    border-bottom 2px solid $table-border-color
+
+
+.date
+  font-size: 75%;
+  letter-spacing 1.67px
+  text-transform uppercase
+  white-space nowrap
+
+
+.container.main-wrapper
+  min-width: $screen-xs
+
+
+.high_voltage-pages.high_voltage-pages-show
+.tags.tags-show
+.search.search-index
+.search.search-show
+.contents.contents-index
+.contents.contents-show
+  .container
+    @media (min-width $screen-lg)
+      width 1120px!important
+  .topic-content
+    @media (min-width $screen-lg)
+      margin: 0 7.28% 30px;
+  .topic-text
+    p
+      max-width 560px
+
+
+.page-about
+  .topic-header
+    margin: 14px 0 34px;
+
+    @media (max-width $screen-sm)
+      margin: -15px 0 21px;
+
+  blockquote
+    padding: 3px 36px;
+    margin 0 0 44px
+
+    @media (max-width $screen-sm)
+      padding: 3px 0px 3px 20px;
+      margin: 0 0 20px;
+
+    p
+      max-width: 481px!important
+      position relative
+      font-size 20px
+      line-height 26px
+      margin 0 0 20px!important
+
+      @media (max-width $screen-sm)
+        max-width: 270px!important
+        margin-bottom: 12px!important;
+        font-size 16px
+        line-height 22px
+
+      &:last-child
+        margin-bottom 0!important
+
+    span
+      white-space nowrap
+      @media (max-width $screen-sm)
+        &:after
+          content ''
+          position relative
+          display table
+
+    .comment
+      color #9B9B9B
+      font-family $font-family-sans
+      margin-left 22px
+      @media (max-width $screen-sm)
+        font-size 14px
+
+  &-author
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    float: right;
+    margin-top: -6%
+    @media (max-width $screen-sm)
+      margin-top: -11%
+      width: 50px;
+      height: 50px;
+
+    img
+      width: 100%;

@@ -1,0 +1,105 @@
+
+
+make-height-grid($class)
+  for $index in $grid-heights
+    .col-h-{$class}-{$index}
+      height unit(($index*10), 'px') !important
+
+
+// Centered container element
+container-fixed($gutter = $grid-gutter-width)
+  margin-right auto
+  margin-left auto
+  padding-left floor($gutter / 2)
+  padding-right ceil($gutter / 2)
+  clearfix()
+
+// Creates a wrapper for a series of columns
+make-row($gutter = $grid-gutter-width)
+  margin-left ceil($gutter / -2)
+  margin-right floor($gutter / -2)
+  clearfix()
+
+
+// Framework grid generation
+//
+// Used only by Bootstrap to generate the correct number of grid $classes given
+// any value of `$grid-columns`.
+make-grid-columns()
+  $col
+    position relative
+    // Prevent columns from collapsing when empty
+    min-height 1px
+    // Inner gutter via padding
+    padding-left ceil($grid-gutter-width / 2)
+    padding-right floor($grid-gutter-width / 2)
+
+  // Common styles for all sizes of grid columns, widths 1-12
+  for $index in 1..$grid-columns
+    .col-xs-{$index}, .col-sm-{$index}, .col-md-{$index}, .col-lg-{$index}
+      @extend $col
+
+float-grid-columns($class)
+  $col-float-{$class}
+    float left
+
+  for $index in 1..$grid-columns
+    .col-{$class}-{$index}
+      @extend $col-float-{$class}
+
+calc-grid-column($index, $class, $type)
+  if $type == width and $index > 0
+    .col-{$class}-{$index}
+      width unit(($index / $grid-columns)*100, '%')
+  else if $type == push
+    if $index == 0
+      .col-{$class}-push-0
+        left auto
+    else
+      .col-{$class}-push-{$index}
+        left unit(($index / $grid-columns)*100, '%')
+  else if $type == pull
+    if $index == 0
+      .col-{$class}-pull-0
+        right auto
+    else
+      .col-{$class}-pull-{$index}
+        right unit(($index / $grid-columns)*100, '%')
+  else if $type == offset
+    .col-{$class}-offset-{$index}
+      margin-left unit(($index / $grid-columns)*100, '%')
+
+loop-grid-columns($grid-columns, $class, $type)
+  for $index in $grid-columns..0
+    calc-grid-column($index, $class, $type)
+
+// Create grid for specific $class
+make-grid($class)
+  float-grid-columns($class)
+  loop-grid-columns($grid-columns, $class, width)
+  loop-grid-columns($grid-columns, $class, pull)
+  loop-grid-columns($grid-columns, $class, push)
+  loop-grid-columns($grid-columns, $class, offset)
+
+
+
+
+// Responsive utilities
+
+//
+// More easily include all the states for responsive-utilities.
+responsive-visibility()
+  display block !important
+
+  table&
+    display table !important
+
+  tr&
+    display table-row !important
+
+  th&,
+  td&
+    display table-cell !important
+
+responsive-invisibility()
+  display none !important

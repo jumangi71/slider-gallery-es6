@@ -17,5 +17,31 @@ if (sliderNode) {
       pauseOnHover: true,
       autoStart: 4000
     });
+
+
+    slider.init('#main-slider-news', {
+      animation: 'slide',
+      navigator: false,
+      touch: true,
+      arrows: true,
+      items: 4,
+      pauseOnHover: true,
+      autoStart: 3500,
+      responsive: {
+        0: {
+          items: 1
+        },
+        640: {
+          items: 2
+        },
+        970: {
+          items: 2
+        },
+        1280: {
+          items: 4
+        }
+      }
+    });
+
   });
 }
